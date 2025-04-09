@@ -58,3 +58,14 @@ void loop() {
   digitalWrite(LED, HIGH);      // Liga o LED
   delay(1000);                  // Aguarda 1 segundo
 }
+```
+
+## Adicionando Bibliotecas
+
+Para adicionar as bibliotecas necessárias ao seu projeto, adicione as seguintes linhas ao seu arquivo `platformio.ini`:
+
+```ini
+lib_deps =
+    knolleary/PubSubClient@^2.8
+    adafruit/Adafruit GFX Library@^1.11.3
+    adafruit/Adafruit SSD1306@^2.5.7
