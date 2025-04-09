@@ -29,3 +29,32 @@ Para acompanhar as aulas, você precisará instalar os seguintes softwares:
 ## Próximos Passos
 
 Após instalar os requisitos, você estará pronto para começar a desenvolver! Consulte os materiais da aula para instruções específicas sobre cada projeto.
+
+
+# Implementando Código no ESP8266
+
+Este exemplo demonstra como controlar um LED conectado ao pino 2 do ESP8266.
+
+## Adicionando o Código
+
+No projeto, dentro da pasta `src`, localize o arquivo `main.cpp`.  Substitua o conteúdo do arquivo pelo seguinte código:
+
+```cpp
+#include <Arduino.h>
+
+const byte LED = 2; // Define o pino do LED (D4 no NodeMCU)
+
+void setup() {
+  Serial.begin(115200); // Inicializa a comunicação serial
+  pinMode(LED, OUTPUT);  // Configura o pino do LED como saída
+}
+
+void loop() {
+  Serial.println("Low Voltage"); // Imprime "Low Voltage" no monitor serial
+  digitalWrite(LED, LOW);       // Desliga o LED
+  delay(1000);                  // Aguarda 1 segundo
+
+  Serial.println("High Voltage"); // Imprime "High Voltage" no monitor serial
+  digitalWrite(LED, HIGH);      // Liga o LED
+  delay(1000);                  // Aguarda 1 segundo
+}
